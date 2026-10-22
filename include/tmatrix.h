@@ -282,3 +282,14 @@ public:
 };
 
 #endif
+/*cmake_minimum_required(VERSION 3.16)
+project(utmatrix LANGUAGES CXX)
+
+include_directories(include gtest)
+
+add_executable(sample_matrix samples/sample_matrix.cpp)
+
+add_library(gtest STATIC gtest/gtest-all.cc)
+add_executable(test_utmatrix test/test_main.cpp test/test_tmatrix.cpp test/test_tvector.cpp)
+target_link_libraries(test_utmatrix gtest)
+*/
