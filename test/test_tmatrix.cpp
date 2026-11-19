@@ -146,3 +146,20 @@ TEST(TDynamicMatrix, cant_subtract_matrixes_with_not_equal_size)
   TDynamicMatrix<int> m1(2), m2(3);
   ASSERT_ANY_THROW(m1 - m2);
 }
+
+cmake_minimum_required(VERSION 3.16)
+project(utmatrix LANGUAGES CXX)
+
+include_directories(include gtest)
+
+# Основная программа (sample)
+add_executable(sample_matrix samples/sample_matrix.cpp)
+
+# Библиотека gtest и тесты
+add_library(gtest STATIC gtest/gtest-all.cc)
+add_executable(test_utmatrix
+    test/test_main.cpp
+    test/test_tmatrix.cpp
+    test/test_tvector.cpp
+)
+target_link_libraries(test_utmatrix gtest)
